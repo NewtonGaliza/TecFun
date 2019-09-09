@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Read</title>
+		<meta charset="UTF-8">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="static/js/bootstrap.min.js"></script>
+	<body>
+		<div class="page-header">
+			<h1>Read</h1>
+		</div>
+		<table  class="table" border="4">
+			<tr>
+				<td>ID</td>
+				<td>Name</td>
+			</tr>
+			{% for item in itens %}
+				<tr>
+					<td>{{ item._id }}</td>
+					<td>{{ item.name }}</td>
+					<td><center><a href="/delete/{{ item._id }}">Remover</a></center></td>
+					<td><center><a href="/update/{{ update._id }}">Alterar</a></center></td>
+				</tr>
+			{% endfor %}
+		</table><br>
+		<a href="{{ url_for('main') }}"><input type="button" class="btn btn-primary btn-lg" value="main"></a>
+	</body>
+</html>
